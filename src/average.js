@@ -11,8 +11,25 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  //  conteúdo para commit inicial.
+const average = (array) => {
+  let sum = 0;
+  let result = 0;
+  // Loop para determinar a média aritimética:
+  for (let i = 0; i < array.length; i += 1) {
+    sum += array[i];
+  }
+  result = Math.round((sum /= array.length));
+
+  //  Loop para retornar "undefined" nos casos de string ou array zero:
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] === 'string') {
+      result = undefined;
+    }
+  }
+  if (array.length === 0) {
+    result = undefined;
+  }
+  return result;
 };
 
 module.exports = average;
