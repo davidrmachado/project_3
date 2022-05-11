@@ -20,12 +20,14 @@ const average = (array) => {
   }
   result = Math.round((sum /= array.length));
 
-  //  Loop para retornar "undefined" nos casos de string ou array zero:
+  //  Loop para retornar "undefined" nos caso de string:
   for (let i = 0; i < array.length; i += 1) {
     if (typeof array[i] === 'string') {
       result = undefined;
     }
   }
+
+  // Condicional para retornar "undefined" no caso de array zero:
   if (array.length === 0) {
     result = undefined;
   }
